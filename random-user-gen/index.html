@@ -4,15 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css">
         <title> Random User Generator</title>
     </head>
     <body>
-        <div id="app">
-            <img v-bind:src="picture" v-bind:alt="`${firstName} ${lastName}`" />
-            <h1> {{firstName}} {{lastName}}</h1>
-            <h3> {{email}}</h3>
-            <button v-on:click="getUser()" :class="gender"> Get random user</button>
+        <div id="app" class="flex items-center justify-center h-screen bg-blue-100">
+            <div class="bg-white flex items-center flex-col justify-evenly rounded-2xl border shadow-xl p-10 max-w-lg space-y-5">
+                <img class="w-20 h-20 object-cover rounded-full border-4" :class="[...(gender === 'male' ? ['border-blue-500'] : ['border-pink-500'])]" v-bind:src="picture" />
+                <h1> {{firstName}} {{lastName}}</h1>
+                <h3> {{email}}</h3>
+                <button v-on:click="getUser()" :class="[...(gender === 'male' ? ['bg-blue-500 hover:bg-blue-700'] : ['bg-pink-500 hover:bg-pink-700'])]" class="text-white font-bold py-2 px-4 rounded"> Get random user</button>    
+            </div>
         </div>
 
         <script src="https://unpkg.com/vue@3.0.5"></script>
