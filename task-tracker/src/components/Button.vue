@@ -1,18 +1,26 @@
 <template>
-    <button v-on:click="onClick()"> {{text}} </button>
+  <button
+    v-on:click="onClick()"
+    :class="[
+      buttonStyle === 'add' ? ['bg-green-500 hover:bg-green-700'] : '',
+      ['text-white rounded-md p-2 '],
+    ]"
+  >
+    {{ text }}
+  </button>
 </template>
 
 <script>
-    export default {
-        name: 'Button',
-        props: {
-            text: String,
-            color: String
-        },
-        methods: {
-            onClick() {
-                console.log('Click')
-            }
-        }
-    }
+export default {
+  name: "Button",
+  props: {
+    text: String,
+    buttonStyle: String,
+  },
+  methods: {
+    onClick() {
+      console.log(this.buttonStyle);
+    },
+  },
+};
 </script>

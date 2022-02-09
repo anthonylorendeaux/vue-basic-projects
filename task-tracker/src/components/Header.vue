@@ -1,7 +1,7 @@
 <template>
-    <header>
-        <h1> {{title}} </h1>
-        <Button text="Add Task" color="blue"/>
+    <header class="flex justify-between">
+        <h1 class="text-gray-800 text-3xl font-semibold"> {{title}} </h1>
+        <Button text="Add Task" buttonStyle="add"/>
     </header>
 </template>
 
