@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "text": "Aller chez le médecin",
+      "day": "13/02/2022",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "Finir d'apprendre vue",
+      "day": "12/02/2022",
+      "reminder": false,
+      "id": 4
+    },
+    {
+      "text": "Commit et push le projet",
+      "day": "Now",
+      "reminder": true,
+      "id": 5
+    }
+  ]
+}
