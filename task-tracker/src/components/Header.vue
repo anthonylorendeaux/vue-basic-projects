@@ -1,7 +1,7 @@
 <template>
     <header class="flex justify-between">
         <h1 class="text-gray-800 text-3xl font-semibold"> {{title}} </h1>
-        <Button text="Add Task" buttonStyle="add"/>
+        <Button @toggle-add-task="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add task'" :buttonStyle="showAddTask ? 'close' : 'add'"/>
     </header>
 </template>
 
@@ -14,7 +14,8 @@ import Button from './Button'
             title: {
                 type: String,
                 default: "Hello World"
-            }
+            },
+            showAddTask: Boolean
         },
         components: {
             Button

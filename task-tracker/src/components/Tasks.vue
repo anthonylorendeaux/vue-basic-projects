@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-between align-middle overflow-y-auto" style="height:65vh">
+    <div class="flex flex-col justify-start align-middle overflow-y-auto" style="height:65vh">
         <Task :key="task.id" v-for="task in tasks" @toggle-reminder="$emit('toggle-reminder', task.id)" @delete-task="$emit('delete-task', task.id)" :task="task"/>
     </div>
 </template>
