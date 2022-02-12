@@ -1,7 +1,7 @@
 <template>
     <div 
         @dblclick="$emit('toggle-reminder', task.id)"
-        class="bg-green-200 bg-opacity-70 p-4 w-10/12 mt-10 rounded-lg max-h-20"
+        class="bg-green-200 bg-opacity-70 p-4 w-10/12 mt-10 rounded-lg max-h-20 ml-auto mr-auto"
         :class="[task.reminder ? ['border-green-500 border-l-8'] : '']"
     >
         <h3 class="flex justify-between text-gray-700 text-md font-semibold"> 
