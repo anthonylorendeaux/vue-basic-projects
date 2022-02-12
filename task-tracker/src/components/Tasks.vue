@@ -1,6 +1,6 @@
 <template>
-    <div :key="task.id" v-for="task in tasks" class="flex justify-between align-middle">
-        <Task :task="task"/>
+    <div class="flex flex-col justify-between align-middle overflow-y-auto" style="height:65vh">
+        <Task :key="task.id" v-for="task in tasks" @toggle-reminder="$emit('toggle-reminder', task.id)" @delete-task="$emit('delete-task', task.id)" :task="task"/>
     </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
     },
     components: {
         Task
-    }
+    },
+    emits: ['delete-task', 'toggle-reminder']
 }
 </script>
