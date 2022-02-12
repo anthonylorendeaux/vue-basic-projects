@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showAddTask"><AddTask @add-task="addTask" /></div>
+  <AddTask v-show="showAddTask" @add-task="addTask" />
   <Tasks
     class="mt-4"
     @toggle-reminder="toggleReminder"
@@ -13,18 +13,18 @@ import AddTask from "../components/AddTask";
 import Tasks from "../components/Tasks";
 
 export default {
-    name: 'Home',
-    props: {
-        showAddTask: Boolean,
-    },
+  name: "Home",
+  props: {
+    showAddTask: Boolean,
+  },
   components: {
     AddTask,
     Tasks,
   },
   data() {
     return {
-        tasks: [],
-    }
+      tasks: [],
+    };
   },
   methods: {
     async deleteTask(id) {
